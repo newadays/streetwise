@@ -1,0 +1,28 @@
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT main:app
+
+runtime_config:
+  python_version: 3
+
+manual_scaling:
+  instances: 1
+
+# [START gae_flex_pubsub_env]
+env_variables:
+    PUBSUB_TOPIC: street-sensors
+    SENSORS_TOKEN: SENSORS_TOKEN
+    # This token is used to verify that requests originate from your
+    # application. It can be any sufficiently random string.
+    PUBSUB_VERIFICATION_TOKEN: gbenga
+# [END gae_flex_pubsub_env]
+skip_files:
+
+  - ^Makefile$
+  - ^venv$
+  # Defaults
+  - ^(.*/)?#.*#$
+  - ^(.*/)?.*~$
+  - ^(.*/)?.*\.py[co]$
+  - ^(.*/)?.*/RCS/.*$
+  - ^(.*/)?\..*$

@@ -1,0 +1,40 @@
+{
+  "Datastore Schema": [
+    {
+      "name": "_description",
+      "type": "STRING"
+    },
+    {
+      "name": "_east",
+      "type": "FLOAT"
+    },
+    {
+      "name": "_last_updt",
+      "type": "TIMESTAMP"
+    },
+    {
+      "name": "_north",
+      "type": "FLOAT"
+    },
+    {
+      "name": "_region_id",
+      "type": "INTEGER"
+    },
+    {
+      "name": "_south",
+      "type": "FLOAT"
+    },
+    {
+      "name": "_west",
+      "type": "FLOAT"
+    },
+    {
+      "name": "current_speed",
+      "type": "FLOAT"
+    },
+    {
+      "name": "region",
+      "type": "STRING"
+    }
+  ]
+}

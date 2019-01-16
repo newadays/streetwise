@@ -1,0 +1,28 @@
+mvn clean compile
+--Datastore to GCS
+
+mvn compile exec:java \
+-Dexec.mainClass=com.google.cloud.teleport.templates.DatastoreToText \
+-Dexec.cleanupDaemonThreads=false \
+-Dexec.args=" \
+--project=data-streamwise \
+--stagingLocation=gs://streamwise/staging \
+--tempLocation=gs://streamwise/temp \
+--templateLocation=gs://streamwise/templates/Datastore_to_GCS_Text.json \
+--runner=DataflowRunner"
+
+--PubSub to GCS
+mvn compile exec:java \
+-Dexec.mainClass=com.google.cloud.teleport.templates.PubsubToText \
+-Dexec.cleanupDaemonThreads=false \
+-Dexec.args=" \
+--project=data-streamwise \
+--inputTopic=projects/data-streamwise/topics/historical \
+--outputDirectory=gs://streamwise/historical/data \
+--outputFilenamePrefix=output- \
+--outputFilenameSuffix=.csv \
+--stagingLocation=gs://streamwise/staging \
+--tempLocation=gs://streamwise/temp \
+--templateLocation=gs://streamwise/templates/PubSub_to_GCS.json \
+--windowDuration=2m \
+--runner=DataflowRunner"

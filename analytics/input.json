@@ -1,0 +1,18 @@
+{
+	"instances": [
+
+		["North of Devon. Kedzie to Lake Shore", 1, 0, 21],
+		["Roosevelt to Oak. Michigan to Lake Shore", 29, 3, 12]
+	]
+}
+
+gcloud ml-engine predict --model $MODEL_NAME --version $VERSION_NAME --json-instances less_than_50K.json
+
+
+{
+	"instances": [
+
+		["North of Devon. Kedzie to Lake Shore", 1, 0, 21],
+		["Roosevelt to Oak. Michigan to Lake Shore", 29, 3, 12]
+	]
+}

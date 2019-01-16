@@ -1,0 +1,64 @@
+{
+  "BigQuery Schema": [
+    {
+      "name": "bus_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "day_of_week",
+      "type": "INTEGER"
+    },
+    {
+      "name": "description",
+      "type": "STRING"
+    },
+    {
+      "name": "east",
+      "type": "FLOAT"
+    },
+    {
+      "name": "hour",
+      "type": "INTEGER"
+    },
+    {
+      "name": "month",
+      "type": "INTEGER"
+    },
+    {
+      "name": "north",
+      "type": "FLOAT"
+    },
+    {
+      "name": "num_reads",
+      "type": "INTEGER"
+    },
+    {
+      "name": "record_id",
+      "type": "STRING"
+    },
+    {
+      "name": "region",
+      "type": "STRING"
+    },
+    {
+      "name": "region_id",
+      "type": "INTEGER"
+    },
+    {
+      "name": "south",
+      "type": "FLOAT"
+    },
+    {
+      "name": "speed",
+      "type": "FLOAT"
+    },
+    {
+      "name": "time",
+      "type": "TIMESTAMP"
+    },
+    {
+      "name": "west",
+      "type": "FLOAT"
+    }
+  ]
+}

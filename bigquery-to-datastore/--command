@@ -1,0 +1,40 @@
+alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
+java -cp /Users/gbenga/Downloads/gcloud/data_streamwise/bigquery-to-datastore/target/bigquery-to-datastore-bundled-0.5.2.jar \com.github.yuiskw.beam.BigQuery2Datastore \
+  --project=data-streamwise \
+  --runner=DataflowRunner \
+  --inputBigQueryDataset=street_traffic \
+  --inputBigQueryTable=daily_traffic_10mins \
+  --outputDatastoreNamespace=default \
+  --outputDatastoreKind=daily_traffic \
+  --keyColumn=id \
+  --indexedColumns=id,_description,_east,_last_updt,_north,_region_id,_south,_west,current_speed,region \
+  --tempLocation=gs://streamwise/tmp/ \
+  --gcpTempLocation=gs://streamwise/logs/
+
+
+#compute engine
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+sudo apt-get install maven
+sudo apt-get install git
+git clone https://github.com/yu-iskw/bigquery-to-datastore.git
+cd bigquery-to-datastore/
+mvn clean package
+java -cp $(pwd)/bigquery-to-datastore/target/bigquery-to-datastore-bundled-0.5.2.jar \com.github.yuiskw.beam.BigQuery2Datastore \
+  --project=data-streamwise \
+  --runner=DataflowRunner \
+  --inputBigQueryDataset=street_traffic \
+  --inputBigQueryTable=daily_traffic_10mins \
+  --outputDatastoreNamespace="" \
+  --outputDatastoreKind=daily_traffic \
+  --keyColumn=id \
+  --indexedColumns=id,_description,_east,_last_updt,_north,_region_id,_south,_west,current_speed,region \
+  --tempLocation=gs://streamwise/stream/tmp/ \
+  --gcpTempLocation=gs://streamwise/stream/logs/
+
+touch bq_datastore.sh
+
+
+(crontab -l 2>/dev/null; printf 'MAILTO="gbenga.awodokun@gmail.com"\n*/11 * * * * sh /home/gbenga_awodokun/bq_datastore.sh 2>&1\n') | crontab -
+
+crontab -l

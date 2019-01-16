@@ -1,0 +1,6 @@
+indexes:
+- kind: daily_traffic
+  properties:
+  - name: _region_id
+  - name: _last_updt
+    direction: desc

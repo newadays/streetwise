@@ -1,0 +1,11 @@
+Flask==1.0.2
+google-cloud-pubsub==0.37.2
+gunicorn==19.9.0
+googleapis-common-protos==1.5.3
+googledatastore==7.0.1
+grpc-google-iam-v1==0.11.4
+proto-google-cloud-datastore-v1==0.90.4
+proto-google-cloud-logging-v2==0.91.3
+proto-google-cloud-pubsub-v1==0.15.4
+google-api-core==1.4.1
+google-api-python-client==1.7.4

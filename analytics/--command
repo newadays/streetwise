@@ -1,0 +1,2 @@
+datalab create ml-streamwise --machine-type g1-small
+datalab connect ml-streamwise --port 8084 --project data-streamwise --verbosity debug

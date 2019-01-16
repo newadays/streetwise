@@ -1,0 +1,18 @@
+cron:
+- description: "Data Collector GET Request to Sensors"
+  url: /tasks/sensor
+  schedule: every 11 mins
+#to reduce duplicates - 11 minutes sampling
+
+- description: "Batch Data Collector GET Request for historical records"
+  url: /tasks/historical
+  schedule: every sunday 00:00
+
+
+- description: "Downloads historical records from PubSub to Cloud Storage"
+  url: /tasks/queue_to_gcs
+  schedule: every sunday 00:10
+
+- description: "Downloads historical records to Cloud Storage from datastore"
+  url: /tasks/download_to_gcs
+  schedule: every sunday 00:30

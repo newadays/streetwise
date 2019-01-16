@@ -1,0 +1,5 @@
+cron:
+- description: "Dataflow Job"
+  url: /dataflow/scheduler
+  schedule: every 2 mins
+#to reduce duplicates - 15 minutes sampling
