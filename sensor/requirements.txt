@@ -1,4 +1,4 @@
-Flask==1.0.2
+Flask
 google-cloud-pubsub==0.37.2
 gunicorn==19.9.0
 googleapis-common-protos==1.5.3
