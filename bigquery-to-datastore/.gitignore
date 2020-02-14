@@ -21,3 +21,4 @@ node_modules/
 *.retry
 *pycache*
 **tmp/
+**service-account.json
