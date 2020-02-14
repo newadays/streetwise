@@ -4,6 +4,7 @@
       "name": "_description",
       "type": "STRING"
     },
+    
     {
       "name": "_east",
       "type": "FLOAT"
