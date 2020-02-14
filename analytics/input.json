@@ -6,6 +6,7 @@
 	]
 }
 
+
 gcloud ml-engine predict --model $MODEL_NAME --version $VERSION_NAME --json-instances less_than_50K.json
 
 
